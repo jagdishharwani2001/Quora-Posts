@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All posts</title>
-    <link rel="stylesheet" href="style.css">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Quora Posts</h1>
     <div class="post">
     <% for(let post of posts){ %>
-        <h2 class="heading"> <%= post.username %></h2>
-        <p class="para"><%=post.content%></p>
-        <button><a href="http://localhost:8080/posts/<%=post.id%>">Give the info about the post</a></button>
-        <button><a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a></button>
-        <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+        <h2 class="heading"><%= post.username %></h2>
+        <p class="para"><%= post.content %></p>
+        <button><a href="/posts/<%= post.id %>">Give the info about the post</a></button>
+        <button><a href="/posts/<%= post.id %>/edit">Edit</a></button>
+        <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
             <button>Delete</button>
         </form>
-    <%}%>
-    
+    <% } %>
     </div>
     <button>
-        <a href="http://localhost:8080/posts/new">Create new Post</a>
+        <a href="/posts/new">Create new Post</a>
     </button>
 </body>
 </html>
+
